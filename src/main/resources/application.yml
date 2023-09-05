@@ -1,0 +1,32 @@
+server:
+  port: 9296
+#  address: 192.168.1.9
+
+spring:
+  application:
+    name: spring-cloud-config
+  cloud:
+    config:
+      server:
+        git:
+#          # uri: https://github.com/LeRoiDavid/memory-config-server
+#          # clone-on-start: true
+#          default-label: master
+          default-label: master
+          uri: ${GIT_URL:${HOME}/Documents/M2/memoire/lab/config-server}
+
+
+###> Actuator <###
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+###> Actuator <###
+
+###> Log config <###
+logging.level:
+  org.springframework.cloud.gateway: DEBUG
+  org.springframework.security: DEBUG
+  org.springframework.web.reactive.function.client: TRACE
