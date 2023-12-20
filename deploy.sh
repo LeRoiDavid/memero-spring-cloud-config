@@ -17,6 +17,6 @@ echo "<-------> Taging image to latest <------->"
 docker tag spring-cloud-config:1.0.0 leroidavid/spring-cloud-config:1.0.0
 
 # Push the created image on Docker hub
-#docker push leroidavid/spring-cloud-gateway
+docker push leroidavid/spring-cloud-config:1.0.0
 
 
